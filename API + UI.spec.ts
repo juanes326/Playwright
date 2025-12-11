@@ -5,7 +5,7 @@ test('API + UI', async ({page, request}) => {
 
         await page.goto('file:///C:/Users/jcolorado/OneDrive%20-%20ENDAVA/Documents/Automation/html/users.html');
         const APIurl = await request.get('https://jsonplaceholder.typicode.com/users')
-        expect(APIurl.status()).toBe(200)
+        expect(APIurl.status()).toBe(400)
         const APIbody = await APIurl.json()
         
         const rows = page.locator('#user-table tbody tr')
